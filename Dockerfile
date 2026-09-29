@@ -1,5 +1,5 @@
 ### Stage 1 - Build
-FROM python:3.12.8-alpine3.19 AS build
+FROM python:3.12-alpine3.23 AS build
 
 RUN apk add --no-cache \
     gcc=13.2.1_git20231014-r0 \
