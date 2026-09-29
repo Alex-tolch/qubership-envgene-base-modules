@@ -29,7 +29,7 @@ RUN curl -sSL -o /usr/local/bin/sops \
     && chmod +x /usr/local/bin/sops
 
 ### Stage 2 - Runtime
-FROM python:3.12.8-alpine3.19 AS runtime
+FROM python:3.12-alpine3.23 AS runtime
 
 COPY build/pip.conf /etc/pip.conf
 COPY build/constraint.txt /build/constraint.txt
