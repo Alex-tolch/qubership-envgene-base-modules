@@ -35,24 +35,24 @@ COPY build/pip.conf /etc/pip.conf
 COPY build/constraint.txt /build/constraint.txt
 
 RUN apk add --no-cache \
-    gcc=13.2.1_git20231014-r0 \
-    musl-dev=1.2.4_git20230717-r6 \
-    bash=5.2.21-r0 \
-    ca-certificates=20240226-r0 \
-    tar=1.35-r2 \
-    curl=8.19.0-r0 \
-    jq=1.8.0-r0 \
-    yq=4.35.2-r4 \
-    gettext=0.22.3-r0 \
-    sed=4.9-r2 \
-    age=1.1.1-r11 \
-    git=2.43.7-r0 \
-    libffi=3.4.4-r3 \
-    openssl=3.5.5-r0 \
-    openssh-client=9.7_p1-r0 \
-    zip=3.0-r12 \
-    unzip=6.0-r14 \
-    sudo=1.9.17_p1-r0
+    'gcc>=13.2' \
+    'musl-dev>=1.2' \
+    'bash>=5.2' \
+    'ca-certificates>=20240226' \
+    'tar>=1.35' \
+    'curl>=8.19' \
+    'jq>=1.8' \
+    'yq>=4.35' \
+    'gettext>=0.22' \
+    'sed>=4.9' \
+    'age>=1.1' \
+    'git>=2.43' \
+    'libffi>=3.4' \
+    'openssl>=3.5' \
+    'openssh-client>=9.7' \
+    'zip>=3.0' \
+    'unzip>=6.0' \
+    'sudo>=1.9' 
 
 COPY --from=build /module /module
 COPY --from=build /usr/local/bin/sops /usr/local/bin/sops
