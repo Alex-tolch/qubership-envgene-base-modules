@@ -2,19 +2,19 @@
 FROM python:3.12-alpine3.23 AS build
 
 RUN apk add --no-cache \
-    gcc>=13.2\
-    musl-dev>=1.2 \
-    libffi-dev>=3.4 \
-    openssl-dev>=3.5 \
-    libxml2-dev>=2.13 \
-    libxslt-dev>=1.1 \
-    zlib-dev>=1.3 \
-    git>=2.43 \
-    curl>=8.19 \
-    jq>=1.8 \
-    openssh-client>=9.7 \
-    zip>=3.0 \
-    unzip>=6.0 
+    'gcc>=13.2'\
+    'musl-dev>=1.2' \
+    'libffi-dev>=3.4' \
+    'openssl-dev>=3.5' \
+    'libxml2-dev>=2.13' \
+    'libxslt-dev>=1.1' \
+    'zlib-dev>=1.3' \
+    'git>=2.43' \
+    'curl>=8.19' \
+    'jq>=1.8' \
+    'openssh-client>=9.7' \
+    'zip>=3.0' \
+    'unzip>=6.0' 
 
 COPY build/pip.conf /etc/pip.conf
 COPY build/constraint.txt /build/constraint.txt
