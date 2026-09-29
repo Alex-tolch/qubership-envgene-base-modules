@@ -10,7 +10,7 @@ inputs:
   repository-owner:
     description: 'Repository owner for Docker images'
     required: false
-    default: 'netcracker'
+    default: 'Alex-tolch'
   image-name:
     description: 'Docker image name'
     required: false
