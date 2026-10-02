@@ -2,19 +2,19 @@
 FROM python:3.12-alpine3.23 AS build
 
 RUN apk add --no-cache \
-    'gcc>=13.2'\
-    'musl-dev>=1.2' \
-    'libffi-dev>=3.4' \
-    'openssl-dev>=3.5' \
-    'libxml2-dev>=2.13' \
-    'libxslt-dev>=1.1' \
-    'zlib-dev>=1.3' \
-    'git>=2.43' \
-    'curl>=8.19' \
-    'jq>=1.8' \
-    'openssh-client>=9.7' \
-    'zip>=3.0' \
-    'unzip>=6.0' 
+    'gcc=15.2.0-r2' \
+    'musl-dev=1.2.5-r23' \
+    'libffi-dev=3.5.2-r0' \
+    'openssl-dev=3.5.9-r0' \
+    'libxml2-dev=2.13.9-r1' \
+    'libxslt-dev=1.1.43-r3' \
+    'zlib-dev=1.3.2-r0' \
+    'git=2.52.0-r0' \
+    'curl=8.22.0-r0' \
+    'jq=1.8.2-r0' \
+    'openssh-client=10.2_p1-r0' \
+    'zip=3.0-r13' \
+    'unzip=6.0-r16'
 
 COPY build/pip.conf /etc/pip.conf
 COPY build/constraint.txt /build/constraint.txt
@@ -35,24 +35,24 @@ COPY build/pip.conf /etc/pip.conf
 COPY build/constraint.txt /build/constraint.txt
 
 RUN apk add --no-cache \
-    'gcc>=13.2' \
-    'musl-dev>=1.2' \
-    'bash>=5.2' \
-    'ca-certificates>=20240226' \
-    'tar>=1.35' \
-    'curl>=8.19' \
-    'jq>=1.8' \
-    'yq>=4.35' \
-    'gettext>=0.22' \
-    'sed>=4.9' \
-    'age>=1.1' \
-    'git>=2.43' \
-    'libffi>=3.4' \
-    'openssl>=3.5' \
-    'openssh-client>=9.7' \
-    'zip>=3.0' \
-    'unzip>=6.0' \
-    'sudo>=1.9' 
+    'gcc=15.2.0-r2' \
+    'musl-dev=1.2.5-r23' \
+    'bash=5.3.3-r1' \
+    'ca-certificates=20260909-r0' \
+    'tar=1.35-r4' \
+    'curl=8.22.0-r0' \
+    'jq=1.8.2-r0' \
+    'yq=4.49.2-r6' \
+    'gettext=0.24.1-r1' \
+    'sed=4.9-r2' \
+    'age=1.2.1-r15' \
+    'git=2.52.0-r0' \
+    'libffi=3.5.2-r0' \
+    'openssl=3.5.9-r0' \
+    'openssh-client=10.2_p1-r0' \
+    'zip=3.0-r13' \
+    'unzip=6.0-r16' \
+    'sudo=1.9.17_p2-r0'
 
 COPY --from=build /module /module
 COPY --from=build /usr/local/bin/sops /usr/local/bin/sops
